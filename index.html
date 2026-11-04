@@ -5,19 +5,49 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Trang chủ – Nhà sách Mão</title>
   <link rel="stylesheet" href="css/base.css">
-  <!-- CSS riêng của trang: thêm ngay dưới dòng base.css -->
+  <link rel="stylesheet" href="css/home.css">
 </head>
 <body>
   <div id="site-header"></div>
 
+  <div class="quote-bar">
+    <div class="container quote-bar__inner">
+      <p class="quote-bar__label">Không gian di sản Đinh Lễ</p>
+      <p class="quote-bar__quote">“Dẫu có bạc vàng trăm vạn lạng, chẳng bằng kinh sử một vài pho.”</p>
+    </div>
+  </div>
+
   <main class="container">
-    <!-- Nội dung trang -->
+    <section class="hero">
+      <div class="hero__text">
+        <p class="hero__pill">Tủ sách di sản • Gác 2 số 5 Đinh Lễ</p>
+        <h1 class="hero__title">Nơi Lưu Giữ Hồn Sách <em>Giữa Lòng Phố Cổ</em></h1>
+        <p class="hero__lead">Trên căn gác hai ngập nắng số 5 Đinh Lễ, từng trang sách cũ là một lát cắt ký ức của Hà Nội suốt hơn ba thập kỷ qua.</p>
+        <div class="hero__actions">
+          <a class="btn" href="products.html">Khám phá tủ sách</a>
+          <a class="btn btn--outline" href="about.html">Chuyện gác hai Đinh Lễ</a>
+        </div>
+        <dl class="hero__stats">
+          <div><dt>1990</dt><dd>Khởi nguồn vỉa hè</dd></div>
+          <div><dt>Gác 2</dt><dd>Tọa độ ký ức</dd></div>
+          <div><dt>Vô giá</dt><dd>Tình yêu con chữ</dd></div>
+        </dl>
+      </div>
+
+      <figure class="hero__figure">
+        <img src="images/home/hero.jpg" alt="Gác sách hai phố Đinh Lễ" onerror="this.remove()">
+        <span class="hero__stamp">Thành lập 1990<br>Đinh Lễ • Hà Nội</span>
+        <figcaption class="hero__caption">
+          <q>Cầu thang xoắn ốc dẫn lên chốn trú ẩn thơm ngát mùi giấy báo cũ giữa lòng Hà thành xôn xao.</q>
+          <span>Gác 2, số 5 Đinh Lễ, Tràng Tiền</span>
+        </figcaption>
+      </figure>
+    </section>
   </main>
 
   <div id="site-footer"></div>
 
   <script src="js/books.js"></script>
   <script src="js/layout.js"></script>
-  <!-- JS riêng của trang: thêm ngay dưới dòng layout.js -->
 </body>
 </html>
