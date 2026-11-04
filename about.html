@@ -1,23 +1,264 @@
-<!DOCTYPE html>
 <html lang="vi">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Giới thiệu và liên hệ – Nhà sách Mão</title>
-  <link rel="stylesheet" href="css/base.css">
-  <!-- CSS riêng của trang: thêm ngay dưới dòng base.css -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nhà Sách Mão</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div id="site-header"></div>
+    
+    <!-- HEADER -->
+    <div id="site-header">
+        <header class="main-header">
+            <div class="logo">
+                <h1>Nhà Sách Mão</h1>
+                <p>GÁC 2 • SỐ 5 ĐỊNH LỄ</p>
+            </div>
+            <nav class="main-menu">
+                <ul>
+                    <li><a href="#">Trang chủ</a></li>
+                    <li><a href="#">Khám phá sách</a></li>
+                    <li><a href="#" class="active">Giới thiệu Nhà sách</a></li>
+                </ul>
+            </nav>
+            <div class="search-bar">
+                <input type="text" placeholder="Tìm sách, tác giả...">
+            </div>
+        </header>
+    </div>
 
-  <main class="container">
-    <!-- Nội dung trang -->
-  </main>
+    <!-- MAIN CONTENT (NỘI DUNG TRANG) -->
+    <main class="container">
+        
+        <div class="breadcrumb">
+            <p>Trang chủ / Giới thiệu nhà sách</p>
+        </div>
 
-  <div id="site-footer"></div>
+        <!-- HERO SECTION[cite: 5] -->
+        <section class="hero-section">
+            <div class="hero-content">
+                <p class="section-subtitle">— TẬP SAN DI SẢN HÀ THÀNH</p>
+                <h1 class="hero-title">Huyền Thoại Gác Sách Số 5 Đinh Lễ</h1>
+                <blockquote class="hero-quote">"Hơn ba mươi năm gieo mầm văn hóa đọc giữa trái tim Hà Nội – từ chiếc bàn nhỏ bên vỉa hè Bờ Hồ đến không gian sách biểu tượng của đất Tràng An."</blockquote>
+                <p class="hero-desc">Không biển quảng cáo hào nhoáng, không thanh âm thương trường vội vã. Nằm khuất sâu sau con ngõ hẹp cổ kính bên bờ Hồ Gươm, Nhà Sách Mão là một cõi riêng của mùi giấy ố vàng, của những bậc thang lim mòn nhẵn dấu chân và của tấm lòng nâng niu từng con chữ của vợ chồng người thủ thư già.</p>
+                
+                <div class="hero-buttons">
+                    <button class="btn btn-dark">Đọc câu chuyện khởi nguồn ↓</button>
+                    <button class="btn btn-light">Bản sắc kiến trúc gác 2 ∧</button>
+                </div>
+                
+                <div class="hero-badge">
+                    <p><strong>DI SẢN SÁCH ĐỊNH LỄ - KHỞI LẬP 1990</strong><br>Chứng tích sống của phong trào đọc sách Hà Nội qua bốn thập kỷ</p>
+                </div>
+            </div>
+            <div class="hero-images">
+                <img src="cau thang xoan.jpg" alt="Cầu thang xoắn" class="img-large">
+                <div class="img-small-group">
+                    <img src="ha noi xua.jpg" alt="Hà Nội thập niên 90">
+                    <img src="sach xua.jpg" alt="Kho tàng sách xưa">
+                </div>
+            </div>
+        </section>
 
-  <script src="js/books.js"></script>
-  <script src="js/layout.js"></script>
-  <!-- JS riêng của trang: thêm ngay dưới dòng layout.js -->
+        <!-- STORY TIMELINE SECTION[cite: 6, 7] -->
+        <section class="story-section">
+            <div class="section-header center">
+                <p class="section-subtitle">— BIÊN NIÊN SỬ GIA TỘC —</p>
+                <h2>Câu Chuyện Khởi Nguồn & Người Giữ Hồn Sách</h2>
+                <p>Ký ức của hai con người bình dị đã thầm lặng viết nên linh hồn cho con phố sách nổi tiếng bậc nhất thủ đô.</p>
+            </div>
+
+            <div class="story-grid">
+                <div class="story-left">
+                    <div class="story-card">
+                        <span class="tag">KHỞI ĐẦU - NHỮNG NĂM 1990</span>
+                        <h3>Chiếc bàn gỗ nhỏ gom nhặt từng con chữ bên vỉa hè</h3>
+                        <p>Đầu thập niên 90, sau những năm tháng công tác tại Nhà xuất bản Ngoại văn, ông Lê Luy cùng vợ là bà Phạm Thị Mão bắt đầu hành trình gắn bó với sách bằng một chiếc bàn gỗ con nép mình bên vỉa hè Bưu điện Bờ Hồ. Vốn liếng thuở sơ khai chỉ vỏn vẹn vài chục cuốn sách cũ và niềm đam mê vô bờ bến với tri thức.</p>
+                    </div>
+                    <div class="story-card">
+                        <span class="tag">TRỤ SỞ VĨNH CỬU - CĂN GÁC SỐ 5</span>
+                        <h3>Tụ hội về căn gác 2 trong ngõ rêu phong</h3>
+                        <p>Bằng tình yêu son sắt và sự tích cóp kiên trì, ông Luy và bà Mão quyết định chuyển toàn bộ số sách về căn gác hai của khu tập thể số 5 Đinh Lễ. Vào thời điểm ấy, Đinh Lễ còn là một con phố tĩnh lặng, chưa một bóng dáng nhà sách nào.</p>
+                    </div>
+                    <blockquote class="highlight-quote">
+                        "Chúng tôi không bán sách để làm giàu vật chất, chúng tôi giữ sách để giữ lấy nét người Hà Nội qua từng thế hệ."<br>
+                        <span>LỜI DẠY CỦA CỤ PHẠM THỊ MÃO (1947 - 2017)</span>
+                    </blockquote>
+                </div>
+                
+                <div class="story-right">
+                    <div class="founder-card">
+                        <p class="founder-title">Về Ông Lê Luy & Bà Phạm Thị Mão</p>
+                        <img src="anh ong ba.jpg" alt="Ông Luy & Bà Mão">
+                    </div>
+                    <ul class="timeline-list">
+                        <li><strong>1990</strong> Bắt đầu sạp sách nhỏ vỉa hè bờ hồ Hoàn Kiếm, chắt chiu từng bản in văn học quý.</li>
+                        <li><strong>1993</strong> Chuyển lên gác 2 số 5 Đinh Lễ, khai sinh Nhà Sách Mão - ngôi nhà đầu tiên của phố sách.</li>
+                        <li><strong>2000s</strong> Xây dựng cầu thang xoắn ốc bằng gỗ lim kinh điển, mở rộng không gian đón tiếp độc giả.</li>
+                        <li><strong>Hiện nay</strong> Thế hệ con cháu tiếp quản và bảo tồn nguyên vẹn giá trị tinh thần bất biến.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section class="architecture-section">
+            <div class="section-header">
+                <p class="section-subtitle">HÌNH HÀI DI SẢN</p>
+                <div class="flex-between">
+                    <h2>Không Gian Kiến Trúc Đặc Trưng</h2>
+                    <p class="w-50">Ba dấu ấn kiến trúc độc bản làm nên trải nghiệm hoài niệm không thể tìm thấy ở bất cứ hiệu sách hiện đại nào.</p>
+                </div>
+            </div>
+            
+            <div class="arch-grid">
+                <div class="arch-card">
+                    <img src="kien-truc-1.jpg" alt="Cầu Thang">
+                    <span class="arch-badge">Dấu ấn 01</span>
+                    <h3>Cầu Thang Xoắn Ốc Gỗ Lim Biểu Tượng</h3>
+                    <p>Chiếc cầu thang xoắn độc nhất vô nhị đưa bước chân người đọc từ con ngõ rêu phong lên thế giới sách bạt ngàn.</p>
+                    <div class="card-footer">
+                        <span>Chất liệu: Gỗ Lim</span>
+                        <span>Tầng 2 nối gác lửng</span>
+                    </div>
+                </div>
+                <div class="arch-card">
+                    <img src="kien-truc-2.jpg" alt="Hành lang">
+                    <span class="arch-badge">Dấu ấn 02</span>
+                    <h3>Hành Lang Gác Lửng Rợp Bóng Sách</h3>
+                    <p>Những lối đi hẹp bao quanh bởi hàng vạn cuốn sách xếp từ sàn lên tới trần nhà, thoang thoảng mùi giấy cũ thân quen.</p>
+                    <div class="card-footer">
+                        <span>Sức chứa: 50.000 đầu sách</span>
+                        <span>Mùi giấy cũ</span>
+                    </div>
+                </div>
+                <div class="arch-card">
+                    <img src="kien-truc-3.jpg" alt="Cửa chớp">
+                    <span class="arch-badge">Dấu ấn 03</span>
+                    <h3>Cửa Chớp Xanh & Ban Công Hướng Phố</h3>
+                    <p>Nơi ánh sáng tự nhiên lọt qua từng khe gỗ xanh lam kiểu Pháp cổ, tạo nên góc đọc tĩnh lặng hiếm hoi giữa lòng phố cổ ồn ào.</p>
+                    <div class="card-footer">
+                        <span>Kiến trúc: Pháp cổ</span>
+                        <span>Góc đọc tĩnh lặng</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="core-values-section">
+            <div class="section-header center">
+                <p class="section-subtitle">— GIÁ TRỊ CỐT LÕI —</p>
+                <h2>4 Điểm Khác Biệt Của Nhà Sách Mão</h2>
+                <p>Điều gì khiến căn gác nhỏ này tồn tại vững vàng qua hơn 30 năm giông bão của thời cuộc?</p>
+            </div>
+            <div class="values-grid">
+                <div class="value-card">
+                    <h3>Kho Sách Quý & Sách Xưa Không Tái Bản</h3>
+                    <p>Nơi lưu giữ hàng ngàn ấn phẩm văn học, lịch sử, biên khảo, từ điển cổ từ những nhà xuất bản danh tiếng thế kỷ 20.</p>
+                    <span class="value-footer">TỦ SÁCH DI SẢN</span>
+                </div>
+                <div class="value-card">
+                    <h3>Điểm Hẹn Tri Thức Đa Thế Hệ</h3>
+                    <p>Nơi gắn bó với nhiều thế hệ học sinh, sinh viên, giáo sư và văn nghệ sĩ Hà Nội.</p>
+                    <span class="value-footer">CỘNG ĐỒNG GẮN KẾT</span>
+                </div>
+                <div class="value-card">
+                    <h3>Không Gian Văn Hóa Mở Tự Do</h3>
+                    <p>Luôn mở rộng cửa đón tiếp bất kỳ ai ghé chân muốn tìm một chỗ ngồi đọc sách không vụ lợi.</p>
+                    <span class="value-footer">BAO DUNG & HIẾU KHÁCH</span>
+                </div>
+                <div class="value-card">
+                    <h3>Tinh Thần Tự Lực Đinh Lễ</h3>
+                    <p>Là ngọn lửa khởi nguồn cho việc hình thành nên cả con phố sách Đinh Lễ sầm uất ngày nay.</p>
+                    <span class="value-footer">NGUỒN CỘI PHỐ SÁCH</span>
+                </div>
+            </div>
+        </section>
+
+        <section class="visit-section">
+            <div class="visit-grid">
+                <div class="visit-info">
+                    <p class="section-subtitle">— CHỈ DẪN HÀNH TRÌNH</p>
+                    <h2>Mời Bạn Ghé Thăm Gác Sách Số 5 Đinh Lễ</h2>
+                    <div class="info-item">
+                        <div>
+                            <strong>Địa chỉ chính xác</strong>
+                            <p>Gác 2, số 5 Đinh Lễ, phường Tràng Tiền, quận Hoàn Kiếm, Hà Nội (đi qua ngõ nhỏ rợp bóng rêu phong).</p>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <div>
+                            <strong>Thời gian đón khách</strong>
+                            <p>09:00 - 21:00 hàng ngày (kể cả cuối tuần & ngày lễ).</p>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <div>
+                            <strong>Hướng dẫn gửi xe & lối lên</strong>
+                            <p>Gửi xe tại bãi gửi xe phố Đinh Lễ hoặc ngã tư Đinh Tiên Hoàng, đi bộ vào con ngõ số 5 và men theo cầu thang lên gác hai.</p>
+                        </div>
+                    </div>
+                    <div class="visit-buttons">
+                        <button class="btn btn-dark">Xem chỉ dẫn vị trí trên bản đồ</button>
+                        <button class="btn btn-light">Khám phá tủ sách tuyển chọn</button>
+                    </div>
+                </div>
+                <div class="visit-map">
+                    <img src="ban-do.jpg" alt="Bản đồ">
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <div id="site-footer">
+        <div class="footer-quote">
+            <p>"Mỗi lần leo lên những bậc thang gỗ số 5 Đinh Lễ, ta như bước qua một cánh cửa thời gian để trở về với những gì thuần khiết nhất của tâm hồn Hà Nội."</p>
+            <span>TẬP SAN KÝ ỨC ĐỊNH LỄ - BẢN QUYỀN TƯ LIỆU NHÀ SÁCH MÃO</span>
+        </div>
+
+        <footer class="main-footer">
+            <div class="footer-grid container">
+                <div class="footer-col brand">
+                    <h2>Nhà Sách Mão</h2>
+                    <p>Nơi lưu giữ ký ức và tình yêu sách trên gác hai phố Đinh Lễ, Hà Nội từ những năm 1990. Không gian văn hóa đọc bản giữa lòng phố cổ nghìn năm văn hiến.</p>
+                    <button class="btn-outline">Mão Tuyển Chọn • Di Sản Đinh Lễ</button>
+                </div>
+                <div class="footer-col links">
+                    <h3>KHÁM PHÁ TUYỂN TẬP</h3>
+                    <ul>
+                        <li><a href="#">Truyện ngắn & Tiểu thuyết</a></li>
+                        <li><a href="#">Văn học kinh điển</a></li>
+                        <li><a href="#">Kinh tế - Kinh doanh</a></li>
+                        <li><a href="#">Lịch sử Hà Nội</a></li>
+                        <li><a href="#">Đọc review & Trầm tích tư liệu</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col links">
+                    <h3>LIÊN KẾT & GIỚI THIỆU</h3>
+                    <ul>
+                        <li><a href="#">Câu chuyện Nhà Sách Mão</a></li>
+                        <li><a href="#">Ký ức ông bà Mão</a></li>
+                        <li><a href="#">Không gian gác 2 Đinh Lễ</a></li>
+                        <li><a href="#">Tủ sách di sản bảo tồn</a></li>
+                        <li><a href="#">Gửi gắm độc giả</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col contact">
+                    <h3>THÔNG TIN LIÊN HỆ</h3>
+                    <p>Gác 2, số 5 Đinh Lễ, Tràng Tiền, Hoàn Kiếm, Hà Nội</p>
+                    <p>09:00 - 21:00 hàng ngày</p>
+                    <p>Không gian đọc tự do & Lưu trữ</p>
+                </div>
+            </div>
+            <div class="footer-bottom container">
+                <p>© Nhà Sách Mão • Không gian văn hóa đọc Đinh Lễ, Hà Nội. Website phi thương mại chia sẻ và lưu giữ tình yêu sách.</p>
+                <p>"Sách là ngọn đèn soi đường tri thức"</p>
+            </div>
+        </footer>
+    </div>
+
+    <!-- JS riêng của trang -->
+    <script src="js/books.js"></script>
+    <script src="js/layout.js"></script>
 </body>
 </html>
