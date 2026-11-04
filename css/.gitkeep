@@ -1,0 +1,189 @@
+/* ==========================================================
+	 NHÀ SÁCH MÃO - base.css  (chủ file: TV1)
+	 Quy chuẩn giao diện dùng chung cho TẤT CẢ các trang.
+	 Không sửa file này nếu chưa báo TV1. Muốn thêm style riêng
+	 của trang -> viết trong css/<tên-trang>.css
+	 ========================================================== */
+@import url('https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,600;0,6..72,700;1,6..72,400&display=swap');
+
+:root{
+	/* --- MÀU (lấy từ không gian tiệm sách cũ Hà Nội) --- */
+	--green:#24493F;        /* xanh cửa chớp: header, nút chính */
+	--green-dark:#18332C;   /* hover, nền toast */
+	--green-soft:#3C6B5D;
+	--ochre:#C99A2E;        /* vàng tường cũ: viền, nhấn, nút CTA */
+	--ochre-soft:#E6C879;
+	--paper:#E6DCC3;        /* giấy cũ: nền trang */
+	--paper-light:#F2EAD6;  /* mặt thẻ, ô nhập liệu */
+	--paper-dark:#CFC19F;   /* đường kẻ, bóng sách */
+	--wood:#3A2A1F;         /* gỗ kệ sách: footer, đường kệ */
+	--ink:#2B2018;          /* chữ chính */
+	--ink-soft:#6B5A48;     /* chữ phụ */
+	--stamp:#9E2A2B;        /* đỏ con dấu: GIÁ, giảm giá, xóa, báo lỗi */
+	--ok:#2F6B3F;
+
+	/* --- CHỮ --- */
+	--font-serif:'Newsreader',Georgia,'Times New Roman',serif;
+	--font-ui:'Be Vietnam Pro',system-ui,-apple-system,'Segoe UI',sans-serif;
+
+	/* --- KHOẢNG CÁCH & KHUNG --- */
+	--s1:.25rem; --s2:.5rem; --s3:1rem; --s4:1.5rem; --s5:2.5rem; --s6:4rem;
+	--radius:3px;
+	--maxw:1120px;
+}
+
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--font-serif);
+	font-size:1.0625rem;line-height:1.65;min-height:100vh;display:flex;flex-direction:column}
+main{flex:1}
+img{max-width:100%;display:block}
+a{color:var(--green);text-underline-offset:3px}
+a:hover{color:var(--green-dark)}
+:focus-visible{outline:3px solid var(--ochre);outline-offset:2px}
+.sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+
+h1,h2,h3,h4{font-family:var(--font-serif);font-weight:700;line-height:1.2;margin:0 0 var(--s3);color:var(--ink)}
+h1{font-size:clamp(2rem,5vw,3rem)}
+h2{font-size:clamp(1.5rem,3.5vw,2rem)}
+h3{font-size:1.25rem}
+p{margin:0 0 var(--s3);max-width:68ch}
+.muted{color:var(--ink-soft)}
+.ui{font-family:var(--font-ui)}
+
+/* --- BỐ CỤC --- */
+.container{width:100%;max-width:var(--maxw);margin-inline:auto;padding-inline:var(--s3)}
+.section{padding-block:var(--s5)}
+.section__head{display:flex;justify-content:space-between;align-items:baseline;gap:var(--s3);
+	border-bottom:2px solid var(--wood);padding-bottom:var(--s2);margin-bottom:var(--s4)}
+.section__head h2{margin:0}
+.grid{display:grid;gap:var(--s4);grid-template-columns:repeat(auto-fill,minmax(210px,1fr))}
+.stack>*+*{margin-top:var(--s3)}
+.breadcrumb{font-family:var(--font-ui);font-size:.85rem;color:var(--ink-soft);padding-block:var(--s3)}
+.breadcrumb a{color:var(--ink-soft)}
+
+/* --- HEADER / BIỂN HIỆU --- */
+.site-header{background:var(--green);border-bottom:5px solid var(--ochre);position:sticky;top:0;z-index:20}
+.site-header__inner{display:flex;align-items:center;justify-content:space-between;gap:var(--s3);min-height:68px}
+.sign{display:inline-flex;flex-direction:column;align-items:center;line-height:1;text-decoration:none;
+	border:2px solid var(--ochre);padding:.3rem .9rem .35rem;color:var(--paper-light);outline-offset:3px}
+.sign:hover{color:var(--paper-light)}
+.sign__small{font-family:var(--font-ui);font-size:.68rem;letter-spacing:.12em;color:var(--ochre-soft)}
+.sign__name{font-family:var(--font-serif);font-weight:700;font-size:1.7rem;letter-spacing:.1em}
+.nav{display:flex;align-items:center;gap:var(--s4)}
+.nav a{font-family:var(--font-ui);font-weight:500;font-size:.93rem;color:var(--paper-light);text-decoration:none;
+	padding-block:.4rem;border-bottom:3px solid transparent}
+.nav a:hover{border-bottom-color:var(--ochre-soft);color:var(--paper-light)}
+.nav a[aria-current="page"]{border-bottom-color:var(--ochre)}
+.cart-badge{display:inline-grid;place-items:center;min-width:1.4rem;height:1.4rem;padding:0 .3rem;margin-left:.4rem;
+	border-radius:99px;background:var(--ochre);color:var(--ink);font-size:.75rem;font-weight:700}
+.nav-toggle{display:none;background:none;border:2px solid var(--ochre);color:var(--paper-light);
+	font-family:var(--font-ui);padding:.4rem .8rem;border-radius:var(--radius);cursor:pointer;min-height:44px}
+
+/* --- FOOTER --- */
+.site-footer{background:var(--wood);color:var(--paper-dark);margin-top:var(--s6);border-top:5px solid var(--ochre)}
+.site-footer__inner{display:grid;gap:var(--s4);grid-template-columns:2fr 1fr 1fr;padding-block:var(--s5)}
+.site-footer h3{color:var(--paper-light);font-size:1.05rem}
+.site-footer a{color:var(--ochre-soft)}
+.site-footer ul{list-style:none;margin:0;padding:0;font-family:var(--font-ui);font-size:.9rem}
+.site-footer li+li{margin-top:.4rem}
+.site-footer__note{border-top:1px solid rgba(230,220,195,.2);padding-block:var(--s3);
+	font-family:var(--font-ui);font-size:.8rem}
+
+/* --- NÚT --- */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:.4rem;min-height:44px;padding:.55rem 1.2rem;
+	font-family:var(--font-ui);font-weight:600;font-size:.93rem;text-decoration:none;cursor:pointer;
+	border:2px solid var(--green);border-radius:var(--radius);background:var(--green);color:var(--paper-light);
+	transition:background .15s,color .15s}
+.btn:hover{background:var(--green-dark);border-color:var(--green-dark);color:var(--paper-light)}
+.btn--ochre{background:var(--ochre);border-color:var(--ochre);color:var(--ink)}
+.btn--ochre:hover{background:var(--ochre-soft);border-color:var(--ochre-soft);color:var(--ink)}
+.btn--ghost{background:transparent;color:var(--green)}
+.btn--ghost:hover{background:var(--green);color:var(--paper-light)}
+.btn--danger{background:transparent;border-color:var(--stamp);color:var(--stamp)}
+.btn--danger:hover{background:var(--stamp);border-color:var(--stamp);color:var(--paper-light)}
+.btn--block{width:100%}
+.btn[disabled]{opacity:.5;cursor:not-allowed}
+
+/* --- BÌA SÁCH (ảnh thật hoặc bìa tạo bằng CSS) --- */
+.cover{position:relative;aspect-ratio:2/3;background:var(--cover,var(--green));color:var(--paper-light);
+	display:flex;flex-direction:column;justify-content:space-between;padding:1rem .9rem 1rem 1.4rem;
+	border-radius:1px 4px 4px 1px;overflow:hidden;
+	box-shadow:inset 7px 0 0 rgba(0,0,0,.22),inset 8px 0 0 rgba(255,255,255,.08),3px 3px 0 var(--paper-dark),5px 5px 0 rgba(58,42,31,.3)}
+.cover::after{content:"";position:absolute;inset:.5rem .5rem .5rem .95rem;border:1px solid rgba(242,234,214,.35);pointer-events:none}
+.cover__title{font-weight:700;font-size:1.15rem;line-height:1.2}
+.cover__author{font-family:var(--font-ui);font-size:.72rem;opacity:.85}
+.cover--img{padding:0;background:var(--paper-dark)}
+.cover--img img{width:100%;height:100%;object-fit:cover}
+.cover--img::after{display:none}
+
+/* --- THẺ SÁCH --- */
+.book-card{display:flex;flex-direction:column;gap:var(--s3);padding:var(--s3);background:var(--paper-light);
+	border:1px solid var(--paper-dark);border-radius:var(--radius)}
+.book-card__link{color:inherit;text-decoration:none;display:flex;flex-direction:column;gap:var(--s3)}
+.book-card__link:hover .book-card__title{text-decoration:underline;text-decoration-color:var(--ochre);text-underline-offset:4px}
+.book-card__title{font-size:1.1rem;font-weight:700;line-height:1.25;margin:0}
+.book-card__author{font-family:var(--font-ui);font-size:.82rem;color:var(--ink-soft);margin:0}
+.book-card__foot{margin-top:auto;display:flex;align-items:center;justify-content:space-between;gap:var(--s2)}
+
+/* --- TEM GIÁ (giá luôn dùng kiểu này) --- */
+.price{display:inline-block;position:relative;font-family:var(--font-ui);font-weight:700;font-size:.95rem;color:var(--stamp);
+	border:1.5px dashed var(--stamp);padding:.1rem .6rem .1rem 1.2rem;border-radius:2px;white-space:nowrap}
+.price::before{content:"";position:absolute;left:.4rem;top:50%;width:.4rem;height:.4rem;margin-top:-.2rem;
+	border-radius:50%;border:1.5px solid var(--stamp)}
+.price--lg{font-size:1.4rem;padding:.2rem .9rem .2rem 1.5rem}
+.chip{display:inline-block;font-family:var(--font-ui);font-size:.75rem;padding:.1rem .6rem;border-radius:99px;
+	border:1px solid var(--ink-soft);color:var(--ink-soft)}
+
+/* --- KỆ SÁCH: thanh danh mục (điểm nhấn nhận diện) --- */
+.shelf{display:flex;align-items:flex-end;gap:3px;padding-inline:var(--s3);border-bottom:12px solid var(--wood);overflow-x:auto}
+.spine{writing-mode:vertical-rl;flex:0 0 auto;padding:1rem .75rem;min-height:9rem;font-weight:700;font-size:1.05rem;
+	color:var(--paper-light);background:var(--green);border-radius:2px 2px 0 0;text-decoration:none;
+	border-inline:1px solid rgba(0,0,0,.2);transition:transform .15s}
+.spine:hover{transform:translateY(-8px);color:var(--paper-light)}
+.spine:nth-child(4n+2){background:var(--stamp);min-height:11rem}
+.spine:nth-child(4n+3){background:var(--ochre);color:var(--ink);min-height:8rem}
+.spine:nth-child(4n+4){background:var(--wood);min-height:10rem}
+.spine[aria-current="true"]{box-shadow:0 -4px 0 var(--ochre-soft)}
+
+/* --- FORM --- */
+.field{display:flex;flex-direction:column;gap:.35rem;margin-bottom:var(--s3)}
+.field label{font-family:var(--font-ui);font-weight:600;font-size:.88rem}
+.field input,.field select,.field textarea{font:inherit;font-family:var(--font-ui);font-size:.95rem;min-height:44px;
+	padding:.55rem .75rem;background:var(--paper-light);color:var(--ink);border:1.5px solid var(--ink-soft);border-radius:var(--radius)}
+.field input:focus,.field select:focus,.field textarea:focus{outline:3px solid var(--ochre);outline-offset:0}
+.field__error{display:none;font-family:var(--font-ui);font-size:.82rem;color:var(--stamp)}
+.field--error input,.field--error select,.field--error textarea{border-color:var(--stamp)}
+.field--error .field__error{display:block}
+
+/* --- BẢNG (giỏ hàng, tóm tắt đơn) --- */
+.table-wrap{overflow-x:auto}
+.table{width:100%;border-collapse:collapse;font-family:var(--font-ui);font-size:.93rem}
+.table th{text-align:left;border-bottom:2px solid var(--wood);padding:.6rem .5rem}
+.table td{border-bottom:1px solid var(--paper-dark);padding:.8rem .5rem;vertical-align:middle}
+.qty{display:inline-flex;align-items:center;border:1.5px solid var(--ink-soft);border-radius:var(--radius);background:var(--paper-light)}
+.qty button{width:36px;height:36px;border:0;background:none;font-size:1.1rem;cursor:pointer;color:var(--ink)}
+.qty span{min-width:2rem;text-align:center;font-weight:600}
+
+/* --- THÔNG BÁO NHỎ --- */
+.toast{position:fixed;left:50%;bottom:1.5rem;transform:translateX(-50%) translateY(20px);opacity:0;pointer-events:none;
+	background:var(--green-dark);color:var(--paper-light);font-family:var(--font-ui);font-size:.9rem;
+	padding:.7rem 1.2rem;border-left:5px solid var(--ochre);border-radius:var(--radius);transition:opacity .2s,transform .2s;z-index:50}
+.toast.is-show{opacity:1;transform:translateX(-50%) translateY(0)}
+
+/* --- RESPONSIVE: 2 mốc chung 768px và 480px --- */
+@media (max-width:768px){
+	.nav-toggle{display:inline-flex;align-items:center}
+	.nav{display:none;position:absolute;left:0;right:0;top:100%;flex-direction:column;align-items:stretch;gap:0;
+		background:var(--green);border-bottom:5px solid var(--ochre);padding:var(--s2) var(--s3) var(--s3)}
+	.nav.is-open{display:flex}
+	.site-footer__inner{grid-template-columns:1fr}
+	.section{padding-block:var(--s4)}
+}
+@media (max-width:480px){
+	.grid{grid-template-columns:repeat(2,1fr);gap:var(--s3)}
+	.book-card{padding:.7rem}
+	.book-card__foot{flex-direction:column;align-items:stretch}
+	.sign__name{font-size:1.45rem}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
