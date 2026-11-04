@@ -4,8 +4,6 @@ const MENU_ITEMS = [
   { label: 'Giới thiệu nhà sách', href: 'about.html', pages: ['about.html'] },
 ];
 
-const CATEGORY_NAMES = ['Truyện', 'Văn học', 'Kinh tế – Kinh doanh'];
-
 function escapeHTML(text) {
   return String(text ?? '').replace(/[&<>"']/g, (ch) => ({
     '&': '&amp;',
@@ -77,30 +75,59 @@ function headerHTML() {
     </header>`;
 }
 
+const FOOTER_BOOK_LINKS = [
+  { label: 'Truyện ngắn & Tiểu thuyết', href: categoryUrl('Truyện') },
+  { label: 'Văn học kinh điển', href: categoryUrl('Văn học') },
+  { label: 'Kinh tế – Kinh doanh', href: categoryUrl('Kinh tế – Kinh doanh') },
+  { label: 'Đọc review & Trầm tích tư liệu', href: 'products.html' },
+];
+
+const FOOTER_ABOUT_LINKS = [
+  'Câu chuyện Nhà Sách Mão',
+  'Ký ức ông bà Mão',
+  'Không gian gác 2 Đinh Lễ',
+  'Tủ sách di sản bảo tồn',
+  'Gửi gắm độc giả',
+];
+
+const ICON_PIN = '<svg viewBox="0 0 24 24" fill="none" stroke-width="2" aria-hidden="true"><path d="M12 21s-7-6.5-7-12a7 7 0 0 1 14 0c0 5.5-7 12-7 12z"></path><circle cx="12" cy="9" r="2.5"></circle></svg>';
+const ICON_BOOK = '<svg viewBox="0 0 24 24" fill="none" stroke-width="2" aria-hidden="true"><path d="M3 5h7a2 2 0 0 1 2 2v13a2 2 0 0 0-2-2H3zM21 5h-7a2 2 0 0 0-2 2v13a2 2 0 0 1 2-2h7z"></path></svg>';
+
 function footerHTML() {
-  const categoryLinks = CATEGORY_NAMES
-    .map((name) => `<li><a href="${categoryUrl(name)}">${escapeHTML(name)}</a></li>`)
+  const bookLinks = FOOTER_BOOK_LINKS
+    .map((item) => `<li><a href="${item.href}">${escapeHTML(item.label)}</a></li>`)
+    .join('');
+  const aboutLinks = FOOTER_ABOUT_LINKS
+    .map((label) => `<li><a href="about.html">${label}</a></li>`)
     .join('');
 
   return `
     <footer class="site-footer">
-      <div class="container site-footer__inner">
+      <div class="container site-footer__grid">
         <div>
-          <h2 class="site-footer__title">Nhà sách Mão</h2>
-          <p>Hiệu sách trên gác hai phố Đinh Lễ, Hoàn Kiếm, Hà Nội.</p>
+          <p class="site-footer__brand">Nhà Sách Mão</p>
+          <p>Nơi lưu giữ ký ức và tình yêu sách trên gác hai phố Đinh Lễ, Hà Nội từ những năm 1990. Không gian văn hóa độc bản giữa lòng phố cổ nghìn năm văn hiến.</p>
+          <span class="site-footer__badge">Mão Tuyển Chọn • Di Sản Đinh Lễ</span>
         </div>
         <div>
-          <h2 class="site-footer__title">Thể loại</h2>
-          <ul>${categoryLinks}</ul>
+          <h2 class="site-footer__title">Khám phá tuyển tập</h2>
+          <ul>${bookLinks}</ul>
         </div>
         <div>
-          <h2 class="site-footer__title">Ghé thăm</h2>
-          <ul>
-            <li><a href="about.html">Giới thiệu</a></li>
-            <li><a href="about.html#lien-he">Liên hệ</a></li>
+          <h2 class="site-footer__title">Liên kết &amp; giới thiệu</h2>
+          <ul>${aboutLinks}</ul>
+        </div>
+        <div>
+          <h2 class="site-footer__title">Thông tin liên hệ</h2>
+          <ul class="site-footer__contact">
+            <li>${ICON_PIN}<span>Gác 2, số 5 Đinh Lễ, Tràng Tiền, Hoàn Kiếm, Hà Nội</span></li>
+            <li>${ICON_BOOK}<span>Không gian đọc tự do &amp; Lưu trữ</span></li>
           </ul>
         </div>
-        <p class="site-footer__note">Bài tập nhóm môn Thiết kế Web.</p>
+      </div>
+      <div class="container site-footer__bottom">
+        <p>© Nhà Sách Mão • Không gian văn hóa đọc Đinh Lễ, Hà Nội. Website phi thương mại chia sẻ và lưu giữ tình yêu sách.</p>
+        <p class="site-footer__quote">“Sách là ngọn đèn soi đường tri thức”</p>
       </div>
     </footer>`;
 }

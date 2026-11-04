@@ -458,26 +458,13 @@ img {
 }
 
 .site-footer {
-  padding-block: var(--space-6);
+  padding-block: var(--space-7) var(--space-5);
   color: var(--color-footer-text);
   background: var(--color-footer-bg);
 }
 
-.site-footer__inner {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  gap: var(--space-5);
-}
-
-.site-footer__title {
-  margin-bottom: var(--space-2);
-  font-size: var(--text-lg);
-  color: var(--color-accent);
-}
-
 .site-footer p {
-  margin: 0 0 var(--space-1);
+  margin: 0 0 var(--space-3);
 }
 
 .site-footer ul {
@@ -486,7 +473,12 @@ img {
   list-style: none;
 }
 
+.site-footer li {
+  margin-bottom: var(--space-3);
+}
+
 .site-footer a {
+  text-decoration: none;
   color: var(--color-footer-text);
 }
 
@@ -494,10 +486,79 @@ img {
   color: var(--color-accent);
 }
 
-.site-footer__note {
-  width: 100%;
-  margin-top: var(--space-3);
-  padding-top: var(--space-3);
+.site-footer__grid {
+  display: grid;
+  grid-template-columns: 1.6fr 1fr 1fr 1.2fr;
+  gap: var(--space-6);
+}
+
+.site-footer__brand {
+  font-family: var(--font-heading);
+  font-size: var(--text-xl);
+  color: var(--color-cream-1);
+}
+
+.site-footer__title {
+  margin-bottom: var(--space-4);
+  font-family: var(--font-label);
   font-size: var(--text-sm);
-  border-top: 1px solid rgba(233, 225, 212, 0.25);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--color-accent);
+}
+
+.site-footer__badge {
+  display: inline-block;
+  padding: var(--space-1) var(--space-3);
+  font-family: var(--font-label);
+  font-size: 0.6875rem;
+  font-weight: 700;
+  color: var(--color-cream-1);
+  background: var(--color-burgundy);
+  border-radius: 4px;
+}
+
+.site-footer__contact li {
+  display: flex;
+  gap: var(--space-2);
+}
+
+.site-footer__contact svg {
+  flex: none;
+  width: 18px;
+  height: 18px;
+  margin-top: 3px;
+  stroke: var(--color-accent);
+}
+
+.site-footer__bottom {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: var(--space-2) var(--space-5);
+  margin-top: var(--space-6);
+  padding-top: var(--space-4);
+  font-size: var(--text-sm);
+  border-top: 1px solid rgba(248, 237, 212, 0.2);
+}
+
+.site-footer__bottom p {
+  margin: 0;
+}
+
+.site-footer__quote {
+  font-style: italic;
+  color: var(--color-accent);
+}
+
+@media (max-width: 768px) {
+  .site-footer__grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .site-footer__grid {
+    grid-template-columns: 1fr;
+  }
 }
