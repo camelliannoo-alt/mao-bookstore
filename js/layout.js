@@ -1,10 +1,10 @@
 const MENU_ITEMS = [
-  { label: 'Trang chủ', page: 'index.html' },
-  { label: 'Truyện', category: 'Truyện' },
-  { label: 'Văn học', category: 'Văn học' },
-  { label: 'Kinh tế – Kinh doanh', category: 'Kinh tế – Kinh doanh' },
-  { label: 'Giới thiệu', page: 'about.html' },
+  { label: 'Trang chủ', href: 'index.html', pages: ['index.html'] },
+  { label: 'Khám phá sách', href: 'products.html', pages: ['products.html', 'product-detail.html'] },
+  { label: 'Giới thiệu nhà sách', href: 'about.html', pages: ['about.html'] },
 ];
+
+const CATEGORY_NAMES = ['Truyện', 'Văn học', 'Kinh tế – Kinh doanh'];
 
 function escapeHTML(text) {
   return String(text ?? '').replace(/[&<>"']/g, (ch) => ({
@@ -47,32 +47,39 @@ function bookCardHTML(book) {
 
 function isActiveItem(item) {
   const page = location.pathname.split('/').pop() || 'index.html';
-  if (item.page) return item.page === page;
-  const current = new URLSearchParams(location.search).get('category');
-  return page === 'products.html' && item.category === current;
+  return item.pages.includes(page);
 }
 
 function headerHTML() {
   const links = MENU_ITEMS.map((item) => {
-    const href = item.page || categoryUrl(item.category);
     const active = isActiveItem(item) ? ' class="is-active" aria-current="page"' : '';
-    return `<li><a href="${href}"${active}>${escapeHTML(item.label)}</a></li>`;
+    return `<li><a href="${item.href}"${active}>${item.label}</a></li>`;
   }).join('');
 
   return `
     <header class="site-header">
       <div class="container site-header__inner">
-        <a class="site-logo" href="index.html">Nhà sách Mão</a>
-        <nav class="site-nav" aria-label="Menu chính">
-          <ul>${links}</ul>
-        </nav>
+        <a class="site-logo" href="index.html">
+          <span class="site-logo__name">Nhà Sách Mão</span>
+          <span class="site-logo__tag">GÁC 2 • SỐ 5 ĐINH LỄ</span>
+        </a>
+        <button class="site-header__toggle" type="button" aria-expanded="false" aria-controls="site-menu">Menu</button>
+        <div class="site-header__menu" id="site-menu">
+          <nav class="site-nav" aria-label="Menu chính">
+            <ul>${links}</ul>
+          </nav>
+          <form class="site-search" action="products.html" method="get" role="search">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"></circle><path d="M20 20l-4-4"></path></svg>
+            <input type="search" name="q" placeholder="Tìm sách, tác giả..." aria-label="Tìm sách, tác giả">
+          </form>
+        </div>
       </div>
     </header>`;
 }
 
 function footerHTML() {
-  const categoryLinks = MENU_ITEMS.filter((item) => item.category)
-    .map((item) => `<li><a href="${categoryUrl(item.category)}">${escapeHTML(item.label)}</a></li>`)
+  const categoryLinks = CATEGORY_NAMES
+    .map((name) => `<li><a href="${categoryUrl(name)}">${escapeHTML(name)}</a></li>`)
     .join('');
 
   return `
@@ -101,6 +108,14 @@ function footerHTML() {
 {
   const headerSlot = document.getElementById('site-header');
   const footerSlot = document.getElementById('site-footer');
-  if (headerSlot) headerSlot.innerHTML = headerHTML();
+  if (headerSlot) {
+    headerSlot.innerHTML = headerHTML();
+    const toggle = headerSlot.querySelector('.site-header__toggle');
+    const menu = headerSlot.querySelector('.site-header__menu');
+    toggle.addEventListener('click', () => {
+      const open = menu.classList.toggle('is-open');
+      toggle.setAttribute('aria-expanded', open);
+    });
+  }
   if (footerSlot) footerSlot.innerHTML = footerHTML();
 }
