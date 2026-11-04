@@ -5,14 +5,139 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Chi tiết sách – Nhà sách Mão</title>
   <link rel="stylesheet" href="css/base.css">
-  <!-- CSS riêng của trang: thêm ngay dưới dòng base.css -->
+  <link rel="stylesheet" href="css/detail.css">
 </head>
 <body>
   <div id="site-header"></div>
 
-  <main class="container">
-    <!-- Nội dung trang -->
-  </main>
+  <main class="container detail-page">
+
+  <!-- Đường dẫn cho biết người đọc đang ở trang nào -->
+  <nav class="detail-breadcrumb" aria-label="Đường dẫn">
+    <a href="index.html">Trang chủ</a>
+    <span aria-hidden="true">/</span>
+    <a href="products.html">Sách</a>
+    <span aria-hidden="true">/</span>
+    <span id="breadcrumb-title">Tên sách</span>
+  </nav>
+
+  <!-- Phần thông tin đầu trang -->
+  <section class="detail-top" aria-labelledby="book-title">
+
+    <!-- Cột trái: ảnh bìa và hồ sơ -->
+    <div class="detail-left">
+      <div id="book-cover">
+        <p>Ảnh bìa sách sẽ hiển thị tại đây.</p>
+      </div>
+
+      <section class="detail-record">
+        <h2>Hồ sơ bản in</h2>
+
+        <dl>
+          <div>
+            <dt>Thể loại</dt>
+            <dd id="book-category">Đang cập nhật</dd>
+          </div>
+
+          <div>
+            <dt>Ấn hành đầu tiên</dt>
+            <dd id="book-year">Đang cập nhật</dd>
+          </div>
+
+          <div>
+            <dt>Nhà xuất bản</dt>
+            <dd id="book-publisher">Đang cập nhật</dd>
+          </div>
+        </dl>
+
+        <h3>Hiện trạng lưu trữ</h3>
+        <p id="book-status">Đang cập nhật</p>
+      </section>
+    </div>
+
+    <!-- Cột phải: tên, tác giả và giới thiệu -->
+    <div class="detail-right">
+      <div id="book-labels"></div>
+
+      <h1 id="book-title">Tên sách</h1>
+      <p>Tác giả: <span id="book-author">Tên tác giả</span></p>
+
+      <blockquote class="detail-description">
+        <p id="book-description">
+          Nội dung giới thiệu sách sẽ hiển thị tại đây.
+        </p>
+      </blockquote>
+
+      <a id="back-to-products" class="btn" href="products.html">
+        ← Quay lại danh mục sách
+      </a>
+
+      <p class="detail-note">
+        Tìm hiểu thêm về không gian đọc tại
+        <a href="about.html">Nhà sách Mão</a>.
+      </p>
+    </div>
+
+  </section>
+
+  <!-- Bài review: sẽ lấy nội dung từ dữ liệu sách ở bước sau -->
+<article class="detail-review" aria-labelledby="review-title">
+
+  <header class="review-header">
+    <h2 id="review-title">Tiêu đề bài review</h2>
+    <p id="review-credit">Người biên soạn: Đang cập nhật</p>
+  </header>
+
+  <section class="review-section">
+    <h3>I. Giới thiệu tác phẩm</h3>
+    <p>Nội dung mục thứ nhất sẽ hiển thị tại đây.</p>
+
+    <div class="review-notes">
+      <div class="review-note">
+        <h4>Nhận xét thứ nhất</h4>
+        <p>Nội dung nhận xét.</p>
+      </div>
+
+      <div class="review-note">
+        <h4>Nhận xét thứ hai</h4>
+        <p>Nội dung nhận xét.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="review-section">
+    <h3>II. Nội dung và giá trị tác phẩm</h3>
+    <p>Nội dung mục thứ hai sẽ hiển thị tại đây.</p>
+
+    <blockquote class="review-quote">
+      <p>Trích dẫn của tác phẩm sẽ hiển thị tại đây.</p>
+      <cite>Nguồn trích dẫn</cite>
+    </blockquote>
+  </section>
+
+  <section class="review-section">
+    <h3>III. Góc nhìn biên tập và ai nên đọc?</h3>
+    <p>Nội dung mục thứ ba sẽ hiển thị tại đây.</p>
+
+    <ul class="review-audience">
+      <li>Nhóm độc giả phù hợp thứ nhất.</li>
+      <li>Nhóm độc giả phù hợp thứ hai.</li>
+      <li>Nhóm độc giả phù hợp thứ ba.</li>
+    </ul>
+  </section>
+
+</article>
+
+<!-- Các sách khác cùng thể loại với sách đang xem -->
+<section class="detail-related" aria-labelledby="related-title">
+  <h2 id="related-title">Sách cùng thể loại</h2>
+
+  <div id="related-books" class="detail-related-grid">
+    <p>Sách cùng thể loại sẽ hiển thị tại đây.</p>
+  </div>
+</section>
+
+</main>
 
   <div id="site-footer"></div>
 
