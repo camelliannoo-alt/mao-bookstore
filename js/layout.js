@@ -31,14 +31,20 @@ function coverHTML(book) {
 
 function bookCardHTML(book) {
   const url = bookUrl(book.id);
+  const note = [book.tag, book.year].filter(Boolean).map(escapeHTML).join(' • ');
+  const desc = book.description ? `<p class="book-card__desc">${escapeHTML(book.description)}</p>` : '';
   return `
     <article class="book-card">
-      <a class="book-card__cover" href="${url}" tabindex="-1" aria-hidden="true">${coverHTML(book)}</a>
-      <div class="book-card__body">
-        <h3 class="book-card__title">${escapeHTML(book.title)}</h3>
-        <p class="book-card__author">${escapeHTML(book.author)}</p>
-        <span class="chip">${escapeHTML(book.category)}</span>
-        <a class="btn btn--small" href="${url}">Xem chi tiết</a>
+      <a class="book-card__cover" href="${url}" tabindex="-1" aria-hidden="true">
+        ${coverHTML(book)}
+        <span class="book-card__label">${escapeHTML(book.category)}</span>
+      </a>
+      <p class="book-card__author">${escapeHTML(book.author)}</p>
+      <h3 class="book-card__title">${escapeHTML(book.title)}</h3>
+      ${desc}
+      <div class="book-card__footer">
+        ${note ? `<span class="book-card__note">${note}</span>` : ''}
+        <a class="book-card__link" href="${url}">Xem chi tiết →</a>
       </div>
     </article>`;
 }
