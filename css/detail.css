@@ -1,0 +1,308 @@
+/* Giới hạn chiều rộng nội dung trang chi tiết */
+.detail-page {
+  width: min(1120px, calc(100% - 40px));
+  margin-inline: auto;
+  padding-block: 28px 64px;
+}
+
+/* Breadcrumb: Trang chủ / Sách / Tên sách */
+.detail-breadcrumb {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 28px;
+  font-size: 14px;
+}
+
+/* Máy tính: cột trái nhỏ hơn cột phải */
+.detail-top {
+  display: grid;
+  grid-template-columns: minmax(0, 380px) minmax(0, 1fr);
+  gap: 48px;
+  align-items: start;
+}
+
+.detail-left,
+.detail-right {
+  min-width: 0;
+}
+
+/* Vị trí đặt bìa; sẽ thay bằng ảnh thật ở bước sau */
+#book-cover {
+  aspect-ratio: 2 / 3;
+  display: grid;
+  place-items: center;
+  padding: 20px;
+}
+
+#book-cover img {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-height: 560px;
+  object-fit: contain;
+}
+
+/* Hồ sơ bản in nằm dưới ảnh bìa */
+.detail-record {
+  padding: 24px;
+}
+
+.detail-record h2 {
+  margin: 0 0 20px;
+  font-size: 18px;
+}
+
+.detail-record dl {
+  margin: 0;
+}
+
+.detail-record dl > div {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 16px;
+  margin-bottom: 14px;
+}
+
+.detail-record dd {
+  margin: 0;
+  text-align: right;
+}
+
+.detail-record h3 {
+  margin: 24px 0 10px;
+  font-size: 14px;
+}
+
+.detail-record p {
+  margin: 0;
+  line-height: 1.7;
+}
+
+/* Thông tin bên phải */
+.detail-right h1 {
+  margin: 16px 0 12px;
+  font-size: clamp(32px, 4vw, 48px);
+  line-height: 1.15;
+  overflow-wrap: anywhere;
+}
+
+.detail-description {
+  margin: 28px 0;
+  padding: 24px;
+}
+
+.detail-description p {
+  margin: 0;
+  font-size: 20px;
+  line-height: 1.8;
+}
+
+#back-to-products {
+  display: inline-flex;
+  align-items: center;
+  padding: 12px 18px;
+}
+
+.detail-note {
+  margin-top: 24px;
+  padding: 20px;
+  line-height: 1.7;
+}
+
+/* Điện thoại và máy tính bảng: xếp thành một cột */
+@media (max-width: 768px) {
+  .detail-top {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+
+  .detail-left {
+    width: 100%;
+    max-width: 380px;
+    margin-inline: auto;
+  }
+}
+
+@media (max-width: 480px) {
+  .detail-page {
+    width: calc(100% - 32px);
+    padding-top: 20px;
+  }
+
+  .detail-record,
+  .detail-description,
+  .detail-note {
+    padding: 16px;
+  }
+
+  .detail-description p {
+    font-size: 18px;
+  }
+}
+
+/* Bài review nằm giữa trang, hẹp hơn phần thông tin sách */
+.detail-review {
+  max-width: 760px;
+  margin: 80px auto 0;
+  padding-top: 40px;
+  border-top: 1px solid currentColor;
+  overflow-wrap: anywhere;
+}
+
+/* Tiêu đề và dòng người biên soạn */
+.review-header {
+  margin-bottom: 36px;
+  text-align: center;
+}
+
+.review-header h2 {
+  margin: 0 0 16px;
+  font-size: clamp(28px, 3vw, 36px);
+  line-height: 1.3;
+}
+
+.review-header p {
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+/* Ba mục nội dung của bài viết */
+.review-section {
+  margin-top: 36px;
+}
+
+.review-section h3 {
+  margin: 0 0 20px;
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 1.4;
+}
+
+.review-section p {
+  margin: 0 0 20px;
+  font-size: 18px;
+  line-height: 1.85;
+}
+
+/* Hai ô nhận xét nằm cạnh nhau */
+.review-notes {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 20px;
+  margin-top: 24px;
+}
+
+.review-note {
+  padding: 20px;
+  border: 1px solid currentColor;
+}
+
+.review-note h4 {
+  margin: 0 0 12px;
+  font-size: 14px;
+}
+
+.review-note p {
+  margin: 0;
+  font-size: 16px;
+  line-height: 1.7;
+}
+
+/* Khung trích dẫn nổi bật giữa bài */
+.review-quote {
+  margin: 36px 0;
+  padding: 28px 20px;
+  text-align: center;
+  border-block: 1px solid currentColor;
+}
+
+.review-quote p {
+  font-size: 26px;
+  font-style: italic;
+  line-height: 1.5;
+}
+
+.review-quote cite {
+  display: block;
+  font-size: 14px;
+}
+
+/* Danh sách người nên đọc */
+.review-audience {
+  display: grid;
+  gap: 12px;
+  margin: 24px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.review-audience li {
+  padding: 18px;
+  border: 1px solid currentColor;
+  font-size: 17px;
+  line-height: 1.7;
+}
+
+/* Thu gọn trên điện thoại */
+@media (max-width: 768px) {
+  .detail-review {
+    margin-top: 48px;
+    padding-top: 28px;
+  }
+
+  .review-notes {
+    grid-template-columns: 1fr;
+  }
+
+  .review-section h3 {
+    font-size: 22px;
+  }
+
+  .review-quote {
+    padding-inline: 12px;
+  }
+
+  .review-quote p {
+    font-size: 22px;
+  }
+}
+
+/* Sách cùng thể loại */
+.detail-related {
+  margin-top: 64px;
+  padding-top: 32px;
+  border-top: 1px solid currentColor;
+}
+
+.detail-related h2 {
+  margin: 0 0 28px;
+  font-size: clamp(26px, 3vw, 34px);
+  line-height: 1.3;
+}
+
+.detail-related-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 24px;
+}
+
+.detail-related-grid > * {
+  min-width: 0;
+}
+
+@media (max-width: 768px) {
+  .detail-related-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .detail-related-grid {
+    grid-template-columns: 1fr;
+  }
+}

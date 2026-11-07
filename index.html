@@ -5,19 +5,124 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Trang chủ – Nhà sách Mão</title>
   <link rel="stylesheet" href="css/base.css">
-  <!-- CSS riêng của trang: thêm ngay dưới dòng base.css -->
+  <link rel="stylesheet" href="css/home.css">
 </head>
 <body>
   <div id="site-header"></div>
 
+  <div class="quote-bar">
+    <div class="container quote-bar__inner">
+      <p class="quote-bar__label">Không gian di sản Đinh Lễ</p>
+      <p class="quote-bar__quote">“Dẫu có bạc vàng trăm vạn lạng, chẳng bằng kinh sử một vài pho.”</p>
+    </div>
+  </div>
+
   <main class="container">
-    <!-- Nội dung trang -->
+    <section class="hero">
+      <div class="hero__text">
+        <p class="hero__pill">Tủ sách di sản • Gác 2 số 5 Đinh Lễ</p>
+        <h1 class="hero__title">Nơi Lưu Giữ Hồn Sách <em>Giữa Lòng Phố Cổ</em></h1>
+        <p class="hero__lead">Trên căn gác hai ngập nắng số 5 Đinh Lễ, từng trang sách cũ là một lát cắt ký ức của Hà Nội suốt hơn ba thập kỷ qua.</p>
+        <div class="hero__actions">
+          <a class="btn" href="products.html">Khám phá tủ sách</a>
+          <a class="btn btn--outline" href="about.html">Chuyện gác hai Đinh Lễ</a>
+        </div>
+        <dl class="hero__stats">
+          <div><dt>1990</dt><dd>Khởi nguồn vỉa hè</dd></div>
+          <div><dt>Gác 2</dt><dd>Tọa độ ký ức</dd></div>
+          <div><dt>Vô giá</dt><dd>Tình yêu con chữ</dd></div>
+        </dl>
+      </div>
+
+      <figure class="hero__figure">
+        <img src="images/home/hero.jpg" alt="Gác sách hai phố Đinh Lễ" onerror="this.remove()">
+        <span class="hero__stamp">Thành lập 1990<br>Đinh Lễ • Hà Nội</span>
+        <figcaption class="hero__caption">
+          <q>Cầu thang xoắn ốc dẫn lên chốn trú ẩn thơm ngát mùi giấy báo cũ giữa lòng Hà thành xôn xao.</q>
+          <span>Gác 2, số 5 Đinh Lễ, Tràng Tiền</span>
+        </figcaption>
+      </figure>
+    </section>
+
+    <section class="intro">
+      <blockquote class="intro__quote">
+        <p>Đinh Lễ không chỉ là con phố bán sách ngắn nhất Hà Nội, mà gác hai nhà số 5 còn là chốn dừng chân bình yên của những tâm hồn trân quý từng nét mực trên giấy ngả màu.</p>
+        <cite>Lời ngỏ người trông sách</cite>
+      </blockquote>
+      <div class="intro__text">
+        <p class="eyebrow intro__eyebrow">Biên niên ký ức • Nhà Sách Mão</p>
+        <h2>Từ chiếc bàn con bên Bưu điện Bờ Hồ đến huyền thoại gác hai</h2>
+        <p>Vào những năm đầu thập niên 90, ông Lê Luy và bà Phạm Thị Mão bắt đầu niềm say mê bằng chiếc xe đẩy và manh bạt nhỏ bên vỉa hè Đinh Tiên Hoàng. Trải qua mưa nắng phố phường, họ tích cóp từng cuốn sách quý rồi chuyển về căn gác số 5 Đinh Lễ – một không gian tĩnh mịch nằm sâu trong con ngõ nhỏ của biệt thự Pháp cổ.</p>
+        <p class="intro__muted">Nơi đây không có máy tính quét mã, không có kệ hàng bóng bẩy thương mại hóa. Chỉ có những giá gỗ mộc chạm trần, chiếc cầu thang xoắn ốc gỗ lim trú danh và tấm lòng tha thiết gìn giữ văn hóa đọc thanh lịch của người Tràng An.</p>
+        <a class="intro__link" href="about.html">Đọc trọn vẹn câu chuyện ông Luy &amp; bà Mão →</a>
+      </div>
+    </section>
+
+    <section class="featured" id="featured">
+      <header class="featured__head">
+        <div>
+          <p class="eyebrow featured__eyebrow">Tuyển tập chọn lọc</p>
+          <h2>Những Trang Sách Được Đọc Nhiều Nhất</h2>
+          <p class="featured__lead">Tuyển tập những tác phẩm văn chương, kinh điển được chọn lọc và lưu giữ cẩn trọng tại tủ sách.</p>
+        </div>
+        <a class="featured__all" href="products.html">Xem tất cả →</a>
+      </header>
+      <div class="grid" id="featured-books"></div>
+    </section>
+
+    <section class="categories">
+      <header class="section-head">
+        <p class="eyebrow">Phân mục nghiên cứu</p>
+        <h2>Hành Trình Khám Phá Tri Thức</h2>
+      </header>
+      <div class="categories__grid" id="category-blocks"></div>
+    </section>
+
+    <section class="gallery">
+      <header class="gallery__head">
+        <div>
+          <p class="eyebrow">Không gian gác 2 Đinh Lễ</p>
+          <h2>Nơi Cầu Thang Xoắn Ốc Gặp Lại Ký Ức Hà Nội</h2>
+        </div>
+        <p class="gallery__note">Một chốn tĩnh lặng đặc biệt để bước chậm lại giữa phố thị xô bồ, ngắm nắng vàng rọi qua song cửa chớp.</p>
+      </header>
+      <div class="gallery__grid">
+        <figure class="gallery__photo gallery__photo--main">
+          <img src="images/home/gallery-1.jpg" alt="Cầu thang xoắn ốc gỗ lim" onerror="this.remove()">
+          <figcaption>
+            <span>Biểu tượng Đinh Lễ</span>
+            Cầu thang xoắn ốc gỗ lim – nơi mỗi bước chân vang lên thanh âm của thời gian
+          </figcaption>
+        </figure>
+        <figure class="gallery__photo">
+          <img src="images/home/gallery-2.jpg" alt="Hành lang gác lửng rợp bóng sách" onerror="this.remove()">
+          <figcaption>Hành lang gác lửng rợp bóng sách</figcaption>
+        </figure>
+        <blockquote class="gallery__quote">
+          <p class="eyebrow">Góc đọc tĩnh tâm</p>
+          <p>“Chúng tôi không bán sách để làm giàu vật chất, chúng tôi giữ sách để giữ lấy cái nét người Hà Nội qua từng thế hệ.”</p>
+          <cite>Ký ức ông bà Mão Luy</cite>
+        </blockquote>
+      </div>
+    </section>
+
+    <section class="invite">
+      <div class="invite__text">
+        <p class="invite__tag">Độc giả thân mến</p>
+        <h2>Bạn muốn tìm cuốn sách nào cho buổi chiều nay tại Gác 2?</h2>
+        <p>Dù là một trang biên khảo Hà Nội xưa hay cuốn tiểu thuyết văn chương thế giới ngả màu thời gian, tủ sách luôn mở rộng chào đón bạn ghé lại.</p>
+      </div>
+      <div class="invite__actions">
+        <a class="btn btn--gold" href="products.html">Xem trọn bộ danh mục sách</a>
+        <a class="btn btn--outline-light" href="about.html#lien-he">Chỉ đường tới gác</a>
+      </div>
+    </section>
   </main>
 
   <div id="site-footer"></div>
 
   <script src="js/books.js"></script>
   <script src="js/layout.js"></script>
-  <!-- JS riêng của trang: thêm ngay dưới dòng layout.js -->
+  <script src="js/home.js"></script>
 </body>
 </html>
