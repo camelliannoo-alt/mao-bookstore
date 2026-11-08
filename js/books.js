@@ -2,7 +2,7 @@
 	 1. CATEGORIES - DANH SÁCH THỂ LOẠI
 ========================================= */
 
-export const CATEGORIES = [
+const CATEGORIES = [
 	{
 		id: "truyen",
 		name: "Truyện",
@@ -42,7 +42,7 @@ const BACK_NOTE =
 	 phải trùng đúng với `name` trong CATEGORIES.
 ========================================= */
 
-export const BOOKS = [
+const BOOKS = [
 
 	// ---------------------------------------
 	// THỂ LOẠI 1: TRUYỆN (2 CUỐN)
@@ -718,7 +718,7 @@ export const BOOKS = [
 	 Tìm sách theo ID
 ========================================= */
 
-export function getBookById(id) {
+function getBookById(id) {
 	return BOOKS.find(book => book.id === id) || null;
 }
 
@@ -728,12 +728,12 @@ export function getBookById(id) {
 ========================================= */
 
 // Lấy sách theo thể loại (so khớp với `name` trong CATEGORIES)
-export function getBooksByCategory(category) {
+function getBooksByCategory(category) {
 	return BOOKS.filter(book => book.category === category);
 }
 
 // Tìm kiếm theo tên sách hoặc tác giả
-export function searchBooks(keyword) {
+function searchBooks(keyword) {
 	const normalizedKeyword = keyword
 		.toLowerCase()
 		.trim();
@@ -745,12 +745,12 @@ export function searchBooks(keyword) {
 }
 
 // Lấy sách đang hoạt động
-export function getActiveBooks() {
+function getActiveBooks() {
 	return BOOKS.filter(book => book.status === "active");
 }
 
 // Lấy sách có bài review (review là mảng các phần nội dung)
-export function getReviewedBooks() {
+function getReviewedBooks() {
 	return BOOKS.filter(
 		book => Array.isArray(book.review) && book.review.length > 0
 	);

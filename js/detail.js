@@ -115,22 +115,19 @@ function renderRelated(book, booksByCategory) {
   document.querySelector('.detail-related').hidden = false;
 }
 
-async function showDetailPage() {
+function showDetailPage() {
   const id = new URLSearchParams(location.search).get('id')?.trim();
   if (!id) {
     showError('Không tìm thấy sách', 'Hãy chọn một quyển từ danh mục sách.');
     return;
   }
 
-  let books;
-  try {
-    books = await import('./books.js');
-  } catch {
+  if (typeof BOOKS === 'undefined') {
     showError('Chưa tải được dữ liệu sách', 'Vui lòng tải lại trang hoặc quay về danh mục sách.');
     return;
   }
 
-  const book = books.getBookById(id);
+  const book = getBookById(id);
   if (!book) {
     showError('Không tìm thấy sách', 'Đường dẫn này không khớp với quyển nào trong danh mục.');
     return;
@@ -138,7 +135,7 @@ async function showDetailPage() {
 
   renderBook(book);
   renderReview(book);
-  renderRelated(book, books.getBooksByCategory(book.category));
+  renderRelated(book, getBooksByCategory(book.category));
 }
 
 showDetailPage();
