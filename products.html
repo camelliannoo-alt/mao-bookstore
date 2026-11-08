@@ -2,22 +2,100 @@
 <html lang="vi">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Danh mục sách – Nhà sách Mão</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Danh mục sách - Nhà Sách Mão</title>
   <link rel="stylesheet" href="css/base.css">
-  <!-- CSS riêng của trang: thêm ngay dưới dòng base.css -->
+  <link rel="stylesheet" href="css/products.css">
 </head>
 <body>
+  <!-- Header dùng chung -->
   <div id="site-header"></div>
 
   <main class="container">
-    <!-- Nội dung trang -->
+    <!-- TU-1: Breadcrumb và phần đầu trang -->
+    <section class="page-intro">
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="index.html">Trang chủ</a>
+        <span class="breadcrumb__sep">/</span>
+        <span aria-current="page">Danh mục sách</span>
+      </nav>
+      
+      <div class="page-intro__header">
+        <div class="page-intro__text">
+          <h1>Khám Phá Tuyển Tập Sách</h1>
+          <p id="category-description">Mỗi cuốn sách nằm trên kệ gỗ Đinh Lễ đều mang một câu chuyện riêng. Hãy chọn một thể loại và thả mình vào những trang viết sâu sắc, đượm màu thời gian và ký ức phố cổ.</p>
+        </div>
+        <div class="page-intro__stats">
+          <span class="page-intro__stats-label">Tuyển chọn hiện hành</span>
+          <strong id="book-count" class="page-intro__stats-number">0 tác phẩm trứ danh</strong>
+        </div>
+      </div>
+    </section>
+
+    <!-- TU-2: Thanh lọc, tìm kiếm và sắp xếp -->
+    <section class="toolbar">
+      <div class="toolbar__filters" id="category-filters">
+        <!-- Render động từ JavaScript -->
+      </div>
+      <div class="toolbar__actions">
+        <form class="search-form" id="search-form" role="search">
+          <input type="search" id="search-input" class="field__input" placeholder="Tìm theo tên tác phẩm, tác giả..." aria-label="Tìm kiếm">
+          <button type="submit" class="search-btn" aria-label="Nút tìm kiếm">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20">
+              <circle cx="11" cy="11" r="7"></circle>
+              <path d="M20 20l-4-4"></path>
+            </svg>
+          </button>
+        </form>
+      </div>
+    </section>
+    
+    <div class="toolbar-meta">
+      <div class="sort-control">
+        <label for="sort-select" class="sort-label">Xếp theo:</label>
+        <select id="sort-select" class="sort-select">
+          <option value="default">Mới tuyển chọn</option>
+          <option value="az">Tên A–Z</option>
+          <option value="za">Tên Z–A</option>
+        </select>
+      </div>
+      <span class="toolbar-badge">Không gian đọc mở • Không kinh doanh thương mại</span>
+    </div>
+
+    <!-- TU-3: Lưới sách và Trạng thái rỗng -->
+    <section id="products-grid" class="grid products-grid">
+      <!-- Sách render động ở đây -->
+    </section>
+
+    <div id="empty-state" class="empty-state" hidden>
+      <h3>Không tìm thấy sách phù hợp</h3>
+      <p>Thử điều chỉnh từ khóa hoặc xóa các bộ lọc để xem toàn bộ danh mục sách của chúng tôi.</p>
+      <button type="button" id="clear-filters-btn" class="btn btn--outline">Xóa bộ lọc</button>
+    </div>
+
+    <!-- TU-5: Banner mời ghé thăm cuối trang -->
+    <section class="banner-visit">
+      <div class="banner-visit__content">
+        <span class="banner-visit__badge">KHÔNG GIAN BẢO TỒN ĐỊNH LỄ • Từ năm 1990</span>
+        <h2>Bạn chưa tìm thấy cuốn sách tâm đắc trên giá trực tuyến?</h2>
+        <p>Không gian gác 2 số 5 Đinh Lễ cất giữ hàng nghìn đầu sách cổ, sách biên khảo, tiểu thuyết đã ngừng tái bản và những trầm tích tư liệu văn hóa chưa kịp số hóa. Cánh cửa gác gỗ luôn rộng mở đón bạn ghé bước.</p>
+      </div>
+      <div class="banner-visit__actions">
+        <a href="about.html#lien-he" class="btn">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18" style="margin-right: 8px; vertical-align: text-bottom;"><path d="M12 21s-7-6.5-7-12a7 7 0 0 1 14 0c0 5.5-7 12-7 12z"></path><circle cx="12" cy="9" r="2.5"></circle></svg>
+          Chỉ đường lên Gác 2
+        </a>
+        <a href="about.html" class="btn btn--outline" style="background: white;">Tìm hiểu lịch sử nhà sách</a>
+      </div>
+    </section>
   </main>
 
+  <!-- Footer dùng chung -->
   <div id="site-footer"></div>
 
-  <script src="js/books.js"></script>
+  <!-- Nạp scripts đúng thứ tự -->
+  <script src="js/du-lieu.js"></script>
   <script src="js/layout.js"></script>
-  <!-- JS riêng của trang: thêm ngay dưới dòng layout.js -->
+  <script src="js/products.js"></script>
 </body>
 </html>
