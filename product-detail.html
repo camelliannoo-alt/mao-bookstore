@@ -18,16 +18,23 @@
     <span aria-hidden="true">/</span>
     <a href="products.html">Sách</a>
     <span aria-hidden="true">/</span>
-    <span id="breadcrumb-title">Tên sách</span>
+    <span id="breadcrumb-title" aria-current="page">Chi tiết sách</span>
   </nav>
 
+  <section class="detail-error" aria-labelledby="detail-error-title" hidden>
+    <h1 id="detail-error-title">Không tìm thấy sách</h1>
+    <p id="detail-error-message">Hãy chọn một quyển từ danh mục sách.</p>
+    <a class="btn" href="products.html">Về danh mục sách</a>
+  </section>
+
   <!-- Phần thông tin đầu trang -->
-  <section class="detail-top" aria-labelledby="book-title">
+  <section class="detail-top" aria-labelledby="book-title" hidden>
 
     <!-- Cột trái: ảnh bìa và hồ sơ -->
     <div class="detail-left">
-      <div id="book-cover">
-        <p>Ảnh bìa sách sẽ hiển thị tại đây.</p>
+      <div class="detail-cover-frame">
+        <div id="book-cover"></div>
+        <span id="book-ribbon" class="detail-ribbon" hidden></span>
       </div>
 
       <section class="detail-record">
@@ -59,90 +66,40 @@
     <div class="detail-right">
       <div id="book-labels"></div>
 
-      <h1 id="book-title">Tên sách</h1>
-      <p>Tác giả: <span id="book-author">Tên tác giả</span></p>
+      <h1 id="book-title"></h1>
+      <p class="detail-author">Tác giả: <span id="book-author"></span></p>
 
       <blockquote class="detail-description">
-        <p id="book-description">
-          Nội dung giới thiệu sách sẽ hiển thị tại đây.
-        </p>
+        <p id="book-description"></p>
       </blockquote>
 
       <a id="back-to-products" class="btn" href="products.html">
         ← Quay lại danh mục sách
       </a>
 
-      <p class="detail-note">
-        Tìm hiểu thêm về không gian đọc tại
-        <a href="about.html">Nhà sách Mão</a>.
-      </p>
+      <p id="book-note" class="detail-note"></p>
     </div>
 
   </section>
 
-  <!-- Bài review: sẽ lấy nội dung từ dữ liệu sách ở bước sau -->
-<article class="detail-review" aria-labelledby="review-title">
+    <article class="detail-review" aria-labelledby="review-title" hidden>
+      <header class="review-header">
+        <h2 id="review-title"></h2>
+        <p id="review-credit"></p>
+      </header>
+      <div id="review-content"></div>
+    </article>
 
-  <header class="review-header">
-    <h2 id="review-title">Tiêu đề bài review</h2>
-    <p id="review-credit">Người biên soạn: Đang cập nhật</p>
-  </header>
-
-  <section class="review-section">
-    <h3>I. Giới thiệu tác phẩm</h3>
-    <p>Nội dung mục thứ nhất sẽ hiển thị tại đây.</p>
-
-    <div class="review-notes">
-      <div class="review-note">
-        <h4>Nhận xét thứ nhất</h4>
-        <p>Nội dung nhận xét.</p>
-      </div>
-
-      <div class="review-note">
-        <h4>Nhận xét thứ hai</h4>
-        <p>Nội dung nhận xét.</p>
-      </div>
-    </div>
-  </section>
-
-  <section class="review-section">
-    <h3>II. Nội dung và giá trị tác phẩm</h3>
-    <p>Nội dung mục thứ hai sẽ hiển thị tại đây.</p>
-
-    <blockquote class="review-quote">
-      <p>Trích dẫn của tác phẩm sẽ hiển thị tại đây.</p>
-      <cite>Nguồn trích dẫn</cite>
-    </blockquote>
-  </section>
-
-  <section class="review-section">
-    <h3>III. Góc nhìn biên tập và ai nên đọc?</h3>
-    <p>Nội dung mục thứ ba sẽ hiển thị tại đây.</p>
-
-    <ul class="review-audience">
-      <li>Nhóm độc giả phù hợp thứ nhất.</li>
-      <li>Nhóm độc giả phù hợp thứ hai.</li>
-      <li>Nhóm độc giả phù hợp thứ ba.</li>
-    </ul>
-  </section>
-
-</article>
-
-<!-- Các sách khác cùng thể loại với sách đang xem -->
-<section class="detail-related" aria-labelledby="related-title">
-  <h2 id="related-title">Sách cùng thể loại</h2>
-
-  <div id="related-books" class="detail-related-grid">
-    <p>Sách cùng thể loại sẽ hiển thị tại đây.</p>
-  </div>
-</section>
+    <section class="detail-related" aria-labelledby="related-title" hidden>
+      <h2 id="related-title">Sách cùng thể loại</h2>
+      <div id="related-books" class="detail-related-grid"></div>
+    </section>
 
 </main>
 
   <div id="site-footer"></div>
 
-  <script src="js/books.js"></script>
   <script src="js/layout.js"></script>
-  <!-- JS riêng của trang: thêm ngay dưới dòng layout.js -->
+  <script type="module" src="js/detail.js"></script>
 </body>
 </html>
