@@ -40,7 +40,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 </button>`;
     
     // Các tab từ mảng CATEGORIES
-    CATEGORIES.forEach(cat => {
+    CATEGORIES.forEach(({ name: cat }) => {
       // Đếm số lượng sách thuộc thể loại này
       const count = BOOKS.filter(b => b.category === cat).length;
       html += `<button type="button" class="filter-btn" data-category="${escapeHTML(cat)}">
