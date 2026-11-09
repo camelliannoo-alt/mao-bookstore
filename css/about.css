@@ -1,35 +1,33 @@
-/* ==========================================================================
-   TỆP CSS HOÀN CHỈNH CHO TRANG GIỚI THIỆU (ABOUT.CSS)
-   Dự án: Website Nhà Sách Mão - Số 5 Đinh Lễ
-   ========================================================================== */
 
-/* --- 1. BIẾN TOÀN CỤC CỤC BỘ (CSS VARIABLES) --- */
+/* --- 1. BIẾN TOÀN CỤC (CSS VARIABLES) --- */
 :root {
-    --about-bg-light: #fdf8f0;
+    --about-bg-hero: #fdf8f0;      /* Nền be sáng của phần Hero */
+    --about-bg-story: #e8decb;     /* Nền be trầm của phần Câu chuyện khởi nguồn */
     --about-bg-white: #ffffff;
     --about-primary: #1f3b33;
     --about-primary-hover: #162a24;
     --about-accent: #b38b4d;
-    --about-text: #333333;
-    --about-text-light: #666666;
-    --about-border: #e6dfd3;
+    --about-text: #2c2c2c;
+    --about-text-light: #555555;
+    --about-border: #dcd3c1;
     
-    --font-heading: 'Lora', serif;
-    --font-body: 'Inter', sans-serif;
+    --font-heading: 'Newsreader', 'Lora', serif;
+    --font-body: 'Be Vietnam Pro', sans-serif;
     --transition: all 0.3s ease;
 }
 
-/* --- 2. CẤU TRÚC VÀ QUY TẮC CHUNG (BASE & UTILITIES) --- */
+/* --- 2. CẤU TRÚC VÀ QUY TẮC CHUNG --- */
 * {
     box-sizing: border-box;
 }
 
 body {
-    background-color: var(--about-bg-light);
+    background-color: var(--about-bg-hero);
     color: var(--about-text);
     font-family: var(--font-body);
     margin: 0;
     padding: 0;
+    -webkit-font-smoothing: antialiased;
 }
 
 .container {
@@ -39,7 +37,7 @@ body {
 }
 
 .bg-light { 
-    background-color: var(--about-bg-light); 
+    background-color: var(--about-bg-story); 
 }
 
 .text-center { 
@@ -48,6 +46,7 @@ body {
 
 /* Eyebrow Label */
 .eyebrow {
+    font-family: var(--font-body);
     font-size: 13px;
     font-weight: 600;
     color: var(--about-accent);
@@ -75,15 +74,16 @@ body {
     font-family: var(--font-body);
     font-size: 15px;
     color: var(--about-text);
-    line-height: 1.6;
+    line-height: 1.65;
     margin-bottom: 16px;
 }
 
-/* --- 3. BREADCRUMB (KHOẢNG CÁCH VỚI HEADER) --- */
+/* --- 3. BREADCRUMB --- */
 .breadcrumb {
-    padding: 28px 20px 12px 20px;
-    margin-top: 16px; /* Tách rời hoàn toàn khỏi Header */
-    font-size: 14px;
+    padding: 24px 20px 12px 20px;
+    margin-top: 12px;
+    font-family: var(--font-body);
+    font-size: 13px;
     color: var(--about-text-light);
 }
 .breadcrumb a {
@@ -130,26 +130,29 @@ body {
     background-color: #ffffff;
 }
 
-/* --- 5. HERO SECTION --- */
+/* --- 5. HERO SECTION ("HUYỀN THOẠI GÁC SÁCH") --- */
 .about-hero {
+    background-color: var(--about-bg-hero); /* Background Be sáng chuẩn Hero */
     display: grid;
     grid-template-columns: 1.1fr 0.9fr;
     gap: 48px;
-    padding: 40px 20px 60px;
+    padding: 30px 20px 60px;
     align-items: start;
 }
 
 .hero-title {
     font-size: 42px;
     margin-bottom: 20px;
+    font-weight: 500;
 }
 
 .hero-quote {
     font-family: var(--font-heading);
-    font-size: 18px;
+    font-size: 19px;
     font-style: italic;
     color: var(--about-text-light);
     margin-bottom: 20px;
+    line-height: 1.5;
 }
 
 .hero-actions {
@@ -169,7 +172,9 @@ body {
     display: block;
 }
 .stamp-text strong {
+    font-family: var(--font-body);
     font-size: 13px;
+    font-weight: 600;
     color: var(--about-primary);
     display: block;
     margin-bottom: 4px;
@@ -180,7 +185,7 @@ body {
     margin: 0;
 }
 
-/* Khối hình ảnh Hero (Đã sửa lỗi vỡ ảnh) */
+/* Khối hình ảnh Hero */
 .hero-images {
     width: 100%;
 }
@@ -207,6 +212,7 @@ body {
     color: #ffffff;
 }
 .image-caption .caption-tag {
+    font-family: var(--font-body);
     font-size: 11px;
     letter-spacing: 1px;
     color: #f1d7a3;
@@ -246,6 +252,7 @@ body {
     color: #ffffff;
     padding: 4px 10px;
     font-size: 11px;
+    font-weight: 500;
     border-radius: 4px;
 }
 .image-credit {
@@ -257,16 +264,18 @@ body {
     justify-content: space-between;
 }
 
-/* --- 6. STORY SECTION --- */
+/* --- 6. STORY SECTION ("CÂU CHUYỆN KHỞI NGUỒN") --- */
 .about-story {
-    padding: 70px 0;
+    background-color: var(--about-bg-story); /* Nền be trầm đậm hơn theo mockup */
+    padding: 80px 0;
 }
 .story-header {
     max-width: 650px;
     margin: 0 auto 50px;
 }
 .story-header h2 { 
-    font-size: 34px; 
+    font-size: 36px;
+    font-weight: 500;
 }
 
 .story-grid {
@@ -276,10 +285,10 @@ body {
 }
 .story-card {
     background: var(--about-bg-white);
-    padding: 32px;
+    padding: 36px;
     border-radius: 8px;
     margin-bottom: 24px;
-    box-shadow: 0 2px 12px rgba(0,0,0,0.03);
+    box-shadow: 0 4px 16px rgba(0,0,0,0.04);
 }
 .card-meta {
     display: flex;
@@ -310,22 +319,24 @@ body {
     font-size: 20px;
     font-style: italic;
     margin: 0 0 16px 0;
+    line-height: 1.5;
 }
 .story-quote cite {
+    font-family: var(--font-body);
     font-size: 12px;
     letter-spacing: 1px;
     color: var(--about-accent);
 }
 
-/* Sidebar Chân dung & Niên biểu (Đã sửa dải màu đen) */
+/* Sidebar Chân dung & Niên biểu */
 .sidebar-box {
-    background: var(--about-bg-light);
+    background: var(--about-bg-hero); /* Trắng be nhẹ nổi bật trên nền trầm */
     border: 1px solid var(--about-border);
-    padding: 24px;
+    padding: 28px;
     border-radius: 8px;
 }
 .sidebar-title {
-    font-size: 18px;
+    font-size: 20px;
     text-align: center;
     margin-bottom: 20px;
 }
@@ -350,8 +361,8 @@ body {
     text-align: center;
     padding: 10px;
     font-size: 12px;
-    font-family: var(--font-heading);
-    font-style: italic;
+    font-family: var(--font-body);
+    font-weight: 500;
     margin-top: 8px;
     border-radius: 4px;
 }
@@ -365,12 +376,12 @@ body {
     gap: 14px;
     margin-bottom: 16px;
     font-size: 13px;
-    line-height: 1.5;
+    line-height: 1.55;
 }
 .timeline-year {
     color: var(--about-accent);
     min-width: 48px;
-    font-weight: 600;
+    font-weight: 700;
 }
 .sidebar-footer {
     display: flex;
@@ -388,7 +399,8 @@ body {
 
 /* --- 7. ARCHITECTURE SECTION --- */
 .about-architecture { 
-    padding: 70px 20px; 
+    background-color: var(--about-bg-hero);
+    padding: 80px 20px; 
 }
 .arch-grid {
     display: grid;
@@ -397,7 +409,7 @@ body {
     margin-top: 36px;
 }
 .arch-card {
-    background: var(--about-bg-light);
+    background: var(--about-bg-hero);
     border: 1px solid var(--about-border);
     border-radius: 8px;
     overflow: hidden;
@@ -445,7 +457,8 @@ body {
 
 /* --- 8. DIFFERENCE SECTION --- */
 .about-difference { 
-    padding: 70px 0; 
+    background-color: var(--about-bg-story); /* Nền be trầm */
+    padding: 80px 0; 
 }
 .diff-grid {
     display: grid;
@@ -455,11 +468,11 @@ body {
 }
 .diff-card {
     background: var(--about-bg-white);
-    padding: 24px;
+    padding: 28px 24px;
     border-radius: 8px;
     display: flex;
     flex-direction: column;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.02);
+    box-shadow: 0 4px 14px rgba(0,0,0,0.03);
 }
 .icon-svg {
     margin-bottom: 16px;
@@ -468,11 +481,11 @@ body {
     display: block;
 }
 .diff-card h3 { 
-    font-size: 17px; 
+    font-size: 18px; 
     margin-bottom: 12px; 
 }
 .diff-card p { 
-    font-size: 13px; 
+    font-size: 13.5px; 
     flex-grow: 1; 
     margin-bottom: 16px; 
 }
@@ -484,12 +497,13 @@ body {
     border-top: 1px solid var(--about-border);
 }
 
-/* --- 9. VISIT & CONTACT FORM SECTION --- */
+/* --- 9. VISIT & CONTACT SECTION --- */
 .about-visit { 
-    padding: 70px 20px; 
+    background-color: var(--about-bg-hero);
+    padding: 80px 20px; 
 }
 .visit-grid {
-    background: var(--about-bg-light);
+    background: var(--about-bg-story);
     border: 1px solid var(--about-border);
     border-radius: 12px;
     display: grid;
@@ -533,7 +547,7 @@ body {
     height: 100%; 
 }
 
-/* Styling Form Liên Hệ */
+/* Form Liên Hệ */
 .contact-form-wrapper {
     background: #ffffff;
     padding: 24px;
@@ -600,7 +614,8 @@ body {
 
 /* --- 10. CLOSING SECTION --- */
 .about-closing { 
-    padding: 60px 20px; 
+    background-color: var(--about-bg-story);
+    padding: 70px 20px; 
     border-top: 1px solid var(--about-border); 
 }
 .about-closing blockquote {
@@ -618,7 +633,7 @@ body {
     letter-spacing: 1px; 
 }
 
-/* --- 11. FOOTER SECTION (ĐỒNG BỘ TYPOGRAPHY & NỀN TRẦM) --- */
+/* --- 11. FOOTER SECTION --- */
 .site-footer {
     background-color: #24221c;
     color: #d6cfc2;
